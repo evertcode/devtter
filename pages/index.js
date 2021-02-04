@@ -1,13 +1,16 @@
-import { useState, useEffect } from 'react'
-import Head from 'next/head'
-import AppLayout from '../components/AppLayout'
-import Button from '../components/Button'
-import GitHub from '../components/Icons/GitHub'
-import { colors } from '../styles/theme'
+import { useState, useEffect } from "react"
+import Head from "next/head"
 
-import { loginWithGitHub, onAuthStateChanged } from '../firebase/client'
+import AppLayout from "components/AppLayout"
+import Avatar from "components/Avatar"
+import Button from "components/Button"
+import GitHub from "components/Icons/GitHub"
 
-export default function Home () {
+import { colors } from "../styles/theme"
+
+import { loginWithGitHub, onAuthStateChanged } from "../firebase/client"
+
+export default function Home() {
   const [user, setUser] = useState(undefined)
 
   useEffect(() => {
@@ -24,12 +27,12 @@ export default function Home () {
     <>
       <Head>
         <title>Devtter 🐦</title>
-        <link rel='icon' href='/favicon.ico' />
+        <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <AppLayout>
         <section>
-          <img src='/images/logo.svg' alt='logo' />
+          <img src="/images/logo.svg" alt="logo" />
           <h1>Devtter</h1>
           <h2>
             Talk about development <br /> with developers 👩🏽‍💻👨🏾‍💻
@@ -37,14 +40,17 @@ export default function Home () {
           <div>
             {user === null && (
               <Button onClick={handleClick}>
-                <GitHub fill='#fff' width={24} height={24} />
+                <GitHub fill="#fff" width={24} height={24} />
                 Login with GitHub
               </Button>
             )}
             {user && user.avatar && (
               <div>
-                <img src={user.avatar} />
-                <strong>{user.username}</strong>
+                <Avatar
+                  src={user.avatar}
+                  alt={user.username}
+                  text={user.username}
+                />
               </div>
             )}
           </div>
