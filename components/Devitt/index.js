@@ -15,7 +15,7 @@ export default function Devitt({ avatar, username, message, id }) {
 
       <style jsx>{`
         article {
-          border-bottom: 2px solid #eaf7ff;
+          border-bottom: 2px solid #eee;
           display: flex;
           padding: 10px 15px;
         }
