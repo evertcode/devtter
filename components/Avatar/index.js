@@ -1,10 +1,27 @@
-import styles from "./Avatar.module.css"
-
 export default function Avatar({ alt, src, text }) {
   return (
-    <div className={styles.container}>
-      <img className={styles.avatar} alt={alt} src={src} title={alt} />
-      {text && <strong>{text || alt}</strong>}
-    </div>
+    <>
+      <div>
+        <img alt={alt} src={src} title={alt} />
+        {text && <strong>{text || alt}</strong>}
+      </div>
+
+      <style jsx>{`
+        div {
+          display: flex;
+          align-items: center;
+        }
+
+        img {
+          border-radius: 9999px;
+          height: 49px;
+          width: 49px;
+        }
+
+        img + strong {
+          margin-left: 8px;
+        }
+      `}</style>
+    </>
   )
 }
