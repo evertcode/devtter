@@ -7,7 +7,7 @@ const firebaseConfig = {
   projectId: 'devtter-evertcode',
   storageBucket: 'devtter-evertcode.appspot.com',
   messagingSenderId: '206836771008',
-  appId: '1:206836771008:web:800c5e921d48858e646525',
+  appId: '1:206836771008:web:800c5e921d48858e646525'
 }
 
 !firebase.apps.length && firebase.initializeApp(firebaseConfig)

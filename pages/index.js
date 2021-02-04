@@ -7,7 +7,7 @@ import { colors } from '../styles/theme'
 
 import { loginWithGitHub, onAuthStateChanged } from '../firebase/client'
 
-export default function Home() {
+export default function Home () {
   const [user, setUser] = useState(undefined)
 
   useEffect(() => {
